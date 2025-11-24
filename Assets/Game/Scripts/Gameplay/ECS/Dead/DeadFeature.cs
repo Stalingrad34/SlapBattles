@@ -13,8 +13,11 @@ namespace Game.Scripts.Gameplay.ECS.Dead
     {
       _systems = new EcsSystems(_world);
       _systems
+        .Add(new DeadGUISystem())
         .Add(new AnimationDeadSystem())
+        .Add(new DestroyGameObjectSystem())
         .Add(new DestroySystem())
+        .OneFrame<DestroyGameObjectEvent>()
         .OneFrame<DeadEvent>()
         .Init();
     }

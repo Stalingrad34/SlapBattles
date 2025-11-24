@@ -12,9 +12,9 @@ namespace Game.Scripts.Gameplay.ECS.Input
     {
       _systems = new EcsSystems(_world);
       _systems
-        .Add(new AxisSystem())
-        .Add(new MouseSystem())
-        .Add(new KeySystem())
+        /*.Add(new AxisSystem())
+        .Add(new MouseSystem())*/
+        .Add(new JoystickSystem())
         .Init();
     }
 

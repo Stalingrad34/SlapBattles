@@ -42,10 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3219093284438704668}
   - component: {fileID: 4073595286883834690}
-  - component: {fileID: 8079298842198523127}
   - component: {fileID: 3687211570959241368}
-  - component: {fileID: 5264524604663823316}
-  - component: {fileID: 1140163750306702501}
   m_Layer: 0
   m_Name: HandRoot
   m_TagString: Untagged
@@ -83,19 +80,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Scripts.Gameplay.Data.Slaps.SlapView
   animator: {fileID: 3687211570959241368}
---- !u!114 &8079298842198523127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2607109734026927021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 863c7f7460b2b49abb4fa9a7ff9cb180, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Leopotam.Ecs::Voody.UniLeo.ConvertToEntity
-  convertMode: 0
 --- !u!95 &3687211570959241368
 Animator:
   serializedVersion: 7
@@ -118,36 +102,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5264524604663823316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2607109734026927021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea18cd07c5048489ee6e7605c0d7f30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Game.Scripts.Gameplay.ECS.Slap.Converters.SlapConverter
-  slapView: {fileID: 4073595286883834690}
-  slapPoint: {fileID: 561131916150654438}
-  reloadTime: 1
-  punchTime: 0.2
-  punchForce: 650
-  sphereRadius: 1
---- !u!114 &1140163750306702501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2607109734026927021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee8b8541b5e049dd8eed67786b9b34ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Game.Scripts.Gameplay.ECS.Converters.ControlConverter
 --- !u!1 &4140791761605428689
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +220,7 @@ GameObject:
   - component: {fileID: 8148842584438284294}
   - component: {fileID: 6380728752941752477}
   - component: {fileID: 8774293689667038784}
+  - component: {fileID: 5104164126112107743}
   m_Layer: 0
   m_Name: PlayerView
   m_TagString: Untagged
@@ -503,6 +458,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Scripts.Gameplay.ECS.Converters.MoveTowardsConverter
   speed: 5
+--- !u!114 &5104164126112107743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500311980659525006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea18cd07c5048489ee6e7605c0d7f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Scripts.Gameplay.ECS.Slap.Converters.SlapConverter
+  slapView: {fileID: 4073595286883834690}
+  slapPoint: {fileID: 561131916150654438}
+  reloadTime: 1
+  punchTime: 0.2
+  punchForce: 650
+  sphereRadius: 1
 --- !u!1 &7401123839373504423
 GameObject:
   m_ObjectHideFlags: 0

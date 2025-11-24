@@ -10,6 +10,7 @@ namespace Game.Scripts.Infrastructure.Custom
         public CustomText text;
         public string sound;
         public RectTransform RectTransform => transform as RectTransform;
+        public bool WasPressed => IsPressed();
 
 #if UNITY_EDITOR
         protected override void OnValidate()
@@ -36,7 +37,7 @@ namespace Game.Scripts.Infrastructure.Custom
 
         private void PlayClickSound()
         {
-            AudioController.Instance.PlayAudioClipFromSoundMap(!string.IsNullOrEmpty(sound) ? sound : "Click");
+            //AudioController.Instance.PlayAudioClipFromSoundMap(!string.IsNullOrEmpty(sound) ? sound : "Click");
         }
 
         private string GetPath(Transform transform)

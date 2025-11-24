@@ -6,9 +6,7 @@ using Game.Scripts.Gameplay.ECS.Damage;
 using Game.Scripts.Gameplay.ECS.Damage.Components;
 using Game.Scripts.Gameplay.ECS.Dead;
 using Game.Scripts.Gameplay.ECS.Destroy;
-using Game.Scripts.Gameplay.ECS.Health;
 using Game.Scripts.Gameplay.ECS.Input;
-using Game.Scripts.Gameplay.ECS.Jump;
 using Game.Scripts.Gameplay.ECS.Move;
 using Game.Scripts.Gameplay.ECS.Rigidbody;
 using Game.Scripts.Gameplay.ECS.Rotate;
@@ -16,7 +14,9 @@ using Game.Scripts.Gameplay.ECS.SendMessage;
 using Game.Scripts.Gameplay.ECS.Slap;
 using Game.Scripts.Gameplay.ECS.Spawn;
 using Leopotam.Ecs;
+#if UNITY_EDITOR
 using Leopotam.Ecs.UnityIntegration;
+#endif
 using UnityEngine;
 using Voody.UniLeo;
 

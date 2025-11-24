@@ -8,5 +8,10 @@ namespace Game.Scripts.Multiplayer
     {
       return new Vector3(vector.x, 0, vector.z);
     }
+    
+    public static Vector3 ToVector3(this Vector3Float vector)
+    {
+      return new Vector3(vector.x, vector.y, vector.z);
+    }
   }
 }

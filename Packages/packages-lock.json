@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "bz-soft.ragdoll-helper": {
-      "version": "file:bz-soft.ragdoll-helper",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.leopotam.ecs": {
       "version": "https://github.com/Leopotam/ecs.git",
       "depth": 0,
@@ -392,6 +386,12 @@
         "com.unity.modules.hierarchycore": "1.0.0",
         "com.unity.modules.physics": "1.0.0"
       }
+    },
+    "com.unity.modules.uielementsnative": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
     },
     "com.unity.modules.umbra": {
       "version": "1.0.0",

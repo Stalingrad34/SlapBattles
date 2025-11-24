@@ -13,6 +13,7 @@ namespace Game.Scripts.Gameplay.ECS.Slap
     {
       _systems = new EcsSystems(_world);
       _systems
+        .Add(new MessageSlapPunchSystem())
         .Add(new MessageStartSlapSystem())
         .Add(new ControlStartSlapSystem())
         .Add(new ReloadStartSlapSystem())
@@ -21,6 +22,7 @@ namespace Game.Scripts.Gameplay.ECS.Slap
         .Add(new SlapPunchSystem())
         .OneFrame<StartSlapMessage>()
         .OneFrame<StartSlapEvent>()
+        .OneFrame<SlapPunchMessage>()
         .OneFrame<SlapPunchEvent>()
         .Init();
     }

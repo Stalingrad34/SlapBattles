@@ -16,6 +16,7 @@ namespace Game.Scripts.Multiplayer
     public event Action<string, Player> OnPlayerConnected;
     public event Action<string, Player> OnPlayerDisconnected;
     public event Action<string> OnStartSlapMessageReceived;
+    public event Action<string> OnSlapPunchMessageReceived;
     public event Action<RestartInfo> OnRestartMessageReceived;
     
     private readonly Dictionary<string, PlayerChangesHandler> _changesHandlers = new();
@@ -45,8 +46,9 @@ namespace Game.Scripts.Multiplayer
       _callbacks.Add(_stateCallbackStrategy.OnRemove(s => s.players, OnPlayerRemove));
       
       _room.OnStateChange += OnChange;
-      _room.OnMessage<string>("startSlap", OnSlapMessage);
-      _room.OnMessage<string>("Restart", OnRestartMessage);
+      _room.OnMessage<string>("startSlap", OnStartSlapMessage);
+      _room.OnMessage<string>("slapPunch", OnSlapPunchMessage);
+      _room.OnMessage<string>("restart", OnRestartMessage);
     }
 
     public void Disconnect()
@@ -85,9 +87,14 @@ namespace Game.Scripts.Multiplayer
       
     }
 
-    private void OnSlapMessage(string playerId)
+    private void OnStartSlapMessage(string playerId)
     {
       OnStartSlapMessageReceived?.Invoke(playerId);
+    }
+    
+    private void OnSlapPunchMessage(string data)
+    {
+      OnSlapPunchMessageReceived?.Invoke(data);
     }
     
     private void OnRestartMessage(string message)
@@ -105,13 +112,6 @@ namespace Game.Scripts.Multiplayer
     {
       _room.Send(key, data);
     }
-
-    public void SendShootMessage(SlapInfo slapInfo)
-    {
-      slapInfo.playerId = _room.SessionId;
-      var json = JsonConvert.SerializeObject(slapInfo);
-      SendMessage("shoot", json);
-    }
     
     public void SendDamageMessage(string key, int damage)
     {
@@ -127,6 +127,17 @@ namespace Game.Scripts.Multiplayer
     public void SendStartSlapMessage()
     {
       SendMessage("startSlap", _room?.SessionId);
+    }
+    
+    public void SendSlapPunchMessage(SlapPunchInfo slapInfo)
+    {
+      var json = JsonConvert.SerializeObject(slapInfo);
+      SendMessage("slapPunch", json);
+    }
+
+    public void SendRestartMessage()
+    {
+      SendMessage("restart", _room?.SessionId);
     }
   }
 }
