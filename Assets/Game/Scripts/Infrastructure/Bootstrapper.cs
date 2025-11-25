@@ -9,6 +9,9 @@ namespace Game.Scripts.Infrastructure
     {
         private void Start()
         {
+            Application.targetFrameRate = 60;
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
+            
             var multiplayerManager = AssetProvider.GetMultiplayerManager();
             multiplayerManager.Init();
             DontDestroyOnLoad(multiplayerManager);

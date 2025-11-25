@@ -61,6 +61,7 @@ namespace Game.Scripts.Infrastructure.States
 
     private void OnPlayerDisconnected(string key, Player player)
     {
+      WorldHandler.GetWorld().NewEntity().Get<DisconnectDestroyEvent>().Id = key;
     }
 
     private void OnRestartMessageReceived(RestartInfo restartInfo)

@@ -15,8 +15,10 @@ namespace Game.Scripts.Gameplay.ECS.Dead
       _systems
         .Add(new DeadGUISystem())
         .Add(new AnimationDeadSystem())
+        .Add(new DisconnectDestroySystem())
         .Add(new DestroyGameObjectSystem())
         .Add(new DestroySystem())
+        .OneFrame<DisconnectDestroyEvent>()
         .OneFrame<DestroyGameObjectEvent>()
         .OneFrame<DeadEvent>()
         .Init();
