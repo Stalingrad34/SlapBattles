@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Game.Scripts.Gameplay.ECS.Common;
 using Game.Scripts.Gameplay.ECS.Dead.Components;
@@ -91,16 +92,19 @@ namespace Game.Scripts.Infrastructure.States
       _multiplayer.Disconnect();
     }
 
-    public async UniTaskVoid Dead()
+    public async UniTaskVoid Dead(Transform transform)
     {
       await UniTask.Delay(TimeSpan.FromSeconds(3));
       SetCursorLocked(false);
-      _guiModel.SetRestartBtnActive(true);
+      //_guiModel.SetRestartBtnActive(true);
+      var position = new Vector2Float() {x = transform.position.x, z = transform.position.z};
+      var rotation = transform.rotation.eulerAngles.y;
+      _multiplayer.SendRestartMessage(position, rotation);
     }
 
     public void Restart()
     {
-      _multiplayer.SendRestartMessage();
+      //_multiplayer.SendRestartMessage();
     }
 
     private void SetCursorLocked(bool isLocked)

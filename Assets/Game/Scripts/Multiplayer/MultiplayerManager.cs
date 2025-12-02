@@ -8,16 +8,22 @@ using Game.Scripts.Infrastructure;
 using Game.Scripts.Infrastructure.Services;
 using Newtonsoft.Json;
 using Sirenix.Utilities;
+using UnityEngine;
 
 namespace Game.Scripts.Multiplayer
 {
   public class MultiplayerManager : ColyseusManager<MultiplayerManager>, IService
   {
+    private const string ServerIP = "194.226.139.113";
+    private const string LocalIP = "localhost";
+    
     public event Action<string, Player> OnPlayerConnected;
     public event Action<string, Player> OnPlayerDisconnected;
     public event Action<string> OnStartSlapMessageReceived;
     public event Action<string> OnSlapPunchMessageReceived;
     public event Action<RestartInfo> OnRestartMessageReceived;
+
+    [SerializeField] private bool isLocal;
     
     private readonly Dictionary<string, PlayerChangesHandler> _changesHandlers = new();
     private ColyseusRoom<State> _room;
@@ -26,6 +32,8 @@ namespace Game.Scripts.Multiplayer
 
     public void Init()
     {
+      _colyseusSettings.colyseusServerAddress = isLocal ? LocalIP : ServerIP;
+      
       Instance.InitializeClient();
 
 #if UNITY_EDITOR
@@ -135,9 +143,15 @@ namespace Game.Scripts.Multiplayer
       SendMessage("slapPunch", json);
     }
 
-    public void SendRestartMessage()
+    public void SendRestartMessage(Vector2Float position, float rotation)
     {
-      SendMessage("restart", _room?.SessionId);
+      var data = new Dictionary<string, object>
+      {
+        {"playerId", _room?.SessionId},
+        {"position", position},
+        {"rotation", rotation}
+      };
+      SendMessage("restart", data);
     }
   }
 }

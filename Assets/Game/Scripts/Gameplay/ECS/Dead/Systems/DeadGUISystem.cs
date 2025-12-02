@@ -7,14 +7,14 @@ namespace Game.Scripts.Gameplay.ECS.Dead.Systems
 {
   public class DeadGUISystem : IEcsRunSystem
   {
-    private EcsFilter<ControlComponent, DeadEvent> _deadFilter;
+    private EcsFilter<ControlComponent, TransformComponent, DeadEvent> _deadFilter;
     private EcsFilter<GameSessionComponent> _gameSessionFilter;
 
     public void Run()
     {
       foreach (var i in _deadFilter)
       {
-        _gameSessionFilter.Get1(0).MainState.Dead().Forget();
+        _gameSessionFilter.Get1(0).MainState.Dead(_deadFilter.Get2(i).Transform).Forget();
       }
     }
   }
