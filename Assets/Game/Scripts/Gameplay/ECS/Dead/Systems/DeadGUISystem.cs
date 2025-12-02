@@ -14,7 +14,7 @@ namespace Game.Scripts.Gameplay.ECS.Dead.Systems
     {
       foreach (var i in _deadFilter)
       {
-        _gameSessionFilter.Get1(0).MainState.Dead(_deadFilter.Get2(i).Transform).Forget();
+        _gameSessionFilter.Get1(0).GameState.Dead(_deadFilter.Get2(i).Transform).Forget();
       }
     }
   }

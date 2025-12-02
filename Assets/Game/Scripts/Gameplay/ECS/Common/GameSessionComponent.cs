@@ -4,6 +4,6 @@ namespace Game.Scripts.Gameplay.ECS.Common
 {
   public struct GameSessionComponent
   {
-    public MainState MainState;
+    public AbstractGameState GameState;
   }
 }

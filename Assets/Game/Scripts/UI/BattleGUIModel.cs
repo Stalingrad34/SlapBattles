@@ -7,11 +7,11 @@ namespace Game.Scripts.UI
   {
     public readonly ReactiveProperty<bool> ShowRestartBtn = new();
     
-    private readonly MainState _mainState;
+    private readonly AbstractGameState _standardGameState;
 
-    public BattleGUIModel(MainState mainState)
+    public BattleGUIModel(AbstractGameState standardGameState)
     {
-      _mainState = mainState;
+      _standardGameState = standardGameState;
     }
 
     public void SetRestartBtnActive(bool isActive)
@@ -21,7 +21,7 @@ namespace Game.Scripts.UI
     
     public void RestartClicked()
     {
-      _mainState.Restart();
+      _standardGameState.Restart();
     }
   }
 }

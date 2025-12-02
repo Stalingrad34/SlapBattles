@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using Game.Scripts.UI;
 using UnityEngine;
 
 namespace Game.Scripts.Infrastructure.States
@@ -13,7 +12,7 @@ namespace Game.Scripts.Infrastructure.States
         
         public static void Init()
         {
-            States.Add(typeof(MainState), new MainState());
+            States.Add(typeof(StandardGameState), new StandardGameState());
         }
         
         public static void Enter<TState>() where TState: class, IEnterState
