@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7159782387698806281
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648599721789409996, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_Name
+      value: HandEnemyPotato
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6648599721789409996, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8616056880359687755}
+    - targetCorrespondingSourceObject: {fileID: 6648599721789409996, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 785017051076242537}
+  m_SourcePrefab: {fileID: 100100000, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+--- !u!1 &4546447720610948293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6648599721789409996, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+  m_PrefabInstance: {fileID: 7159782387698806281}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8616056880359687755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546447720610948293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d875d63264c74f209fa4173e12ae9e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Scripts.Gameplay.Data.Units.EnemyView
+  entityConverter: {fileID: 7694994873039678117}
+--- !u!114 &785017051076242537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546447720610948293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f40c32f87bc4278b72593ac482c2414, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Scripts.Gameplay.ECS.Converters.ServerPlayerConverter
+--- !u!114 &7694994873039678117 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 690938830141375660, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+  m_PrefabInstance: {fileID: 7159782387698806281}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4546447720610948293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863c7f7460b2b49abb4fa9a7ff9cb180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.Ecs::Voody.UniLeo.ConvertToEntity

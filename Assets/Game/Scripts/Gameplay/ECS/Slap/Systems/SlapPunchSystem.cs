@@ -10,6 +10,7 @@ namespace Game.Scripts.Gameplay.ECS.Slap.Systems
   public class SlapPunchSystem : IEcsRunSystem
   {
     private EcsFilter<IdentifierComponent, RigidbodyComponent, SlapPunchEvent> _eventFilter;
+    private EcsFilter<ArenaGameStateComponent> _gameSessionFilter;
     private EcsWorld _world;
     
     public void Run()
@@ -29,8 +30,8 @@ namespace Game.Scripts.Gameplay.ECS.Slap.Systems
 
         var slapInfo = new SlapPunchInfo()
         {
-          playerId = _eventFilter.Get1(i).Id,
-          force = new Vector3Float()
+          PlayerId = _eventFilter.Get1(i).Id,
+          Force = new Vector3Float()
           {
             x = _eventFilter.Get3(i).Direction.x,
             y = _eventFilter.Get3(i).Direction.y,
@@ -38,7 +39,7 @@ namespace Game.Scripts.Gameplay.ECS.Slap.Systems
           }
         };
         
-        MultiplayerManager.Instance.SendSlapPunchMessage(slapInfo);
+        _gameSessionFilter.Get1(0).GameState.SendSlapPunchMessage(slapInfo);
       }
     }
   }

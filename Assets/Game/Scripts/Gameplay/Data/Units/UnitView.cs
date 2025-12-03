@@ -5,7 +5,7 @@ namespace Game.Scripts.Gameplay.Data.Units
 {
   public abstract class UnitView : MonoBehaviour
   {
-    [SerializeField] private ConvertToEntity entityConverter;
+    [SerializeField] protected ConvertToEntity entityConverter;
     
     public void Setup(UnitData data)
     {

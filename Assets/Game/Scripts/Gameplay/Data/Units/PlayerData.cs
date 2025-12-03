@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Game.Scripts.Gameplay.Data.Units
 {
@@ -6,5 +7,6 @@ namespace Game.Scripts.Gameplay.Data.Units
   public class PlayerData : ScriptableObject
   {
     public float Speed;
+    public List<Vector3> SpawnPoints;
   }
 }

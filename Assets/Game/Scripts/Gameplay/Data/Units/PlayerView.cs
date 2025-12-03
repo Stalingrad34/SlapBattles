@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Game.Scripts.Gameplay.Data.Environments;
+using Game.Scripts.Gameplay.ECS.Portal.Components;
+using Leopotam.Ecs;
 using UnityEngine;
 
 namespace Game.Scripts.Gameplay.Data.Units
@@ -6,32 +8,12 @@ namespace Game.Scripts.Gameplay.Data.Units
   public class PlayerView : UnitView
   {
     [SerializeField] private Transform cameraPoint;
-    [SerializeField] private Rigidbody rigidbodyTest;
-    [SerializeField] private Vector3 forceTest;
-    [SerializeField] private ForceMode forceMode;
-    
-    private Vector3 _force;
 
     public void SetCameraPoint(CameraView mainCamera)
     {
       mainCamera.transform.SetParent(cameraPoint);
       mainCamera.transform.localRotation = Quaternion.identity;
       mainCamera.transform.localPosition = Vector3.zero;
-    }
-
-    private void FixedUpdate()
-    {
-      if (_force != Vector3.zero)
-      {
-        rigidbodyTest.AddForce(_force,  forceMode);
-        _force = Vector3.zero;
-      }
-    }
-
-    [ContextMenu("Add Force")]
-    public void TestForce()
-    {
-      _force = forceTest;
     }
 
     /*private void OnCollisionStay(Collision collision)

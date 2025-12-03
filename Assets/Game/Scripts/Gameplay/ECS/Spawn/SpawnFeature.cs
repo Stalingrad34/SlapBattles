@@ -2,7 +2,6 @@
 using Game.Scripts.Gameplay.ECS.Spawn.Components;
 using Game.Scripts.Gameplay.ECS.Spawn.Systems;
 using Leopotam.Ecs;
-using UnityEngine;
 
 namespace Game.Scripts.Gameplay.ECS.Spawn
 {
@@ -16,10 +15,8 @@ namespace Game.Scripts.Gameplay.ECS.Spawn
     {
       _systems = new EcsSystems(_world);
       _systems
-        .Add(new SpawnPlayerSystem())
-        .Add(new SpawnEnemySystem())
-        .OneFrame<SpawnPlayerEvent>()
-        .OneFrame<SpawnEnemyEvent>()
+        .Add(new SpawnPotatoSystem())
+        .OneFrame<SpawnPotatoEvent>()
         .Inject(_mainCamera)
         .Init();
     }

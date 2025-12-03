@@ -1,0 +1,161 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6836775389201972341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5592314126518499885}
+  m_Layer: 0
+  m_Name: CameraPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5592314126518499885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836775389201972341}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4181122419507950451}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2413031814836563809
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648599721789409996, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      propertyPath: m_Name
+      value: HandPlayerPotato
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5592314126518499885}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6648599721789409996, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8731223300713825310}
+    - targetCorrespondingSourceObject: {fileID: 6648599721789409996, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8980611660663618684}
+    - targetCorrespondingSourceObject: {fileID: 6648599721789409996, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1075515759888793478}
+  m_SourcePrefab: {fileID: 100100000, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+--- !u!114 &2948303673938504653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 690938830141375660, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+  m_PrefabInstance: {fileID: 2413031814836563809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023064786690663853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863c7f7460b2b49abb4fa9a7ff9cb180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Leopotam.Ecs::Voody.UniLeo.ConvertToEntity
+--- !u!4 &4181122419507950451 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1980065508098956306, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+  m_PrefabInstance: {fileID: 2413031814836563809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9023064786690663853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6648599721789409996, guid: 9e11d910b80087a4b99f6755336f55e8, type: 3}
+  m_PrefabInstance: {fileID: 2413031814836563809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8731223300713825310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023064786690663853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b13b319909476eba4c6f44a7f7c5c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Scripts.Gameplay.Data.Units.PlayerView
+  entityConverter: {fileID: 2948303673938504653}
+  cameraPoint: {fileID: 5592314126518499885}
+--- !u!114 &8980611660663618684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023064786690663853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8b8541b5e049dd8eed67786b9b34ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Scripts.Gameplay.ECS.Converters.ControlConverter
+--- !u!114 &1075515759888793478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9023064786690663853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650005f6fc9647e6b2adf56bd23379c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Scripts.Gameplay.ECS.Converters.SendDataConverter

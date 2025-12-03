@@ -14,22 +14,13 @@ namespace Game.Scripts.Multiplayer
   public class PlayerChangesHandler
   {
     private readonly string _playerId;
-    private readonly Player _player;
-    private readonly StateCallbackStrategy<State> _callbackStrategy;
     private readonly List<Action> _callbacks = new ();
 
     public PlayerChangesHandler(string playerId, Player player, StateCallbackStrategy<State> callbackStrategy)
     {
       _playerId = playerId;
-      _player = player;
-      _callbackStrategy = callbackStrategy;
-      Subscribe();
-    }
-
-    private void Subscribe()
-    {
-      _callbacks.Add(_callbackStrategy.Listen(_player, p => p.position, OnPositionChanged, false));
-      _callbacks.Add(_callbackStrategy.Listen(_player, p => p.rotationY, OnRotationChanged, false));
+      _callbacks.Add(callbackStrategy.Listen(player, p => p.position, OnPositionChanged, false));
+      _callbacks.Add(callbackStrategy.Listen(player, p => p.rotationY, OnRotationChanged, false));
     }
 
     private void OnPositionChanged(Vector2Float oldPosition, Vector2Float newPosition)

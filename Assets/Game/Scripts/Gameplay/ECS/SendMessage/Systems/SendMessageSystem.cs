@@ -18,7 +18,7 @@ namespace Game.Scripts.Gameplay.ECS.SendMessage.Systems
           _filter.Get1(i).HoldTimer -= Time.deltaTime;
           continue;
         }
-        MultiplayerManager.Instance.SendMessage("move", _filter.Get1(i).SendData);
+        MultiplayerManager.Instance.Send("move", _filter.Get1(i).SendData);
       }
     }
   }

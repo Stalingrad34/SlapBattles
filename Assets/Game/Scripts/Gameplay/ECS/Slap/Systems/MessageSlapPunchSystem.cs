@@ -16,10 +16,10 @@ namespace Game.Scripts.Gameplay.ECS.Slap.Systems
       {
         foreach (var ii in _filter)
         {
-          if (_messages.Get1(i).SlapInfo.playerId != _filter.Get1(ii).Id)
+          if (_messages.Get1(i).SlapInfo.PlayerId != _filter.Get1(ii).Id)
             continue;
 
-          _filter.GetEntity(ii).Get<SlapPunchEvent>().Direction = _messages.Get1(i).SlapInfo.force.ToVector3();
+          _filter.GetEntity(ii).Get<SlapPunchEvent>().Direction = _messages.Get1(i).SlapInfo.Force.ToVector3();
         }
       }
     }

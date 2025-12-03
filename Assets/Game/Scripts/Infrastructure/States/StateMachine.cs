@@ -12,7 +12,8 @@ namespace Game.Scripts.Infrastructure.States
         
         public static void Init()
         {
-            States.Add(typeof(StandardGameState), new StandardGameState());
+            States.Add(typeof(ArenaGameState), new ArenaGameState());
+            States.Add(typeof(LobbyState), new LobbyState());
         }
         
         public static void Enter<TState>() where TState: class, IEnterState
@@ -29,7 +30,13 @@ namespace Game.Scripts.Infrastructure.States
         
         public static async UniTask EnterAsync<TState>() where TState: class, IEnterStateAsync
         {
-            var state = ChangeState<TState>();
+            if (_currentState is IExitStateAsync exitStateAsync)
+                await exitStateAsync.ExitAsync();
+            
+            if (_currentState is IExitState exitState)
+                exitState.Exit();
+            
+            var state = ChangeStateAsync<TState>();
             await state.Enter();
         }
         
@@ -44,6 +51,17 @@ namespace Game.Scripts.Infrastructure.States
             if (_currentState is IExitState exitState)
                 exitState.Exit();
             
+            //UIManager.Clear();
+
+            if (!States.TryGetValue(typeof(TState), out var state))
+                throw new UnityException($"State {nameof(TState)} is not exist");
+
+            _currentState = state;
+            return state as TState;
+        }
+        
+        private static TState ChangeStateAsync<TState>() where TState : class, IState
+        {
             //UIManager.Clear();
 
             if (!States.TryGetValue(typeof(TState), out var state))

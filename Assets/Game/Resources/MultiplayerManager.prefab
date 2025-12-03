@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Multiplayer.MultiplayerManager
   _colyseusSettings: {fileID: 11400000, guid: 8c065316b010a3446a87da01ce313a3f, type: 2}
-  isLocal: 1
+  isLocal: 0

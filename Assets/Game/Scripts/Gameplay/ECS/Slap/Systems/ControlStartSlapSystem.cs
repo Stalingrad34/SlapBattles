@@ -1,6 +1,6 @@
-﻿using Game.Scripts.Gameplay.ECS.Input.Components;
+﻿using Game.Scripts.Gameplay.ECS.Common;
+using Game.Scripts.Gameplay.ECS.Input.Components;
 using Game.Scripts.Gameplay.ECS.Slap.Components;
-using Game.Scripts.Multiplayer;
 using Leopotam.Ecs;
 
 namespace Game.Scripts.Gameplay.ECS.Slap.Systems
@@ -8,6 +8,7 @@ namespace Game.Scripts.Gameplay.ECS.Slap.Systems
   public class ControlStartSlapSystem : IEcsRunSystem
   {
     private EcsFilter<ControlComponent, SlapComponent> _filter;
+    private EcsFilter<ArenaGameStateComponent> _gameSessionFilter;
     
     public void Run()
     {
@@ -21,7 +22,7 @@ namespace Game.Scripts.Gameplay.ECS.Slap.Systems
         _filter.Get2(i).CanPunch = true;
         _filter.Get2(i).PunchTimer = _filter.Get2(i).PunchTime;
         _filter.GetEntity(i).Get<StartSlapEvent>();
-        MultiplayerManager.Instance.SendStartSlapMessage();
+        _gameSessionFilter.Get1(0).GameState.SendStartSlapMessage();
       }
     }
   }

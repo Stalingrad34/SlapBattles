@@ -19,14 +19,14 @@ namespace Game.Scripts.Infrastructure
         private const string UNITS_PATH = "Units";
         private static readonly Dictionary<Type, MonoBehaviour> Assets = new();
         
-        public static PlayerView GetPlayerView()
+        public static PlayerView GetPlayerView(string prefabPath)
         {
-            return GetResource<PlayerView>($"{UNITS_PATH}/PlayerView");
+            return GetResource<PlayerView>($"{UNITS_PATH}/{prefabPath}");
         }
         
-        public static EnemyView GetEnemyView()
+        public static EnemyView GetEnemyView(string prefabPath)
         {
-            return GetResource<EnemyView>($"{UNITS_PATH}/EnemyView");
+            return GetResource<EnemyView>($"{UNITS_PATH}/{prefabPath}");
         }
         
         public static MultiplayerManager GetMultiplayerManager()

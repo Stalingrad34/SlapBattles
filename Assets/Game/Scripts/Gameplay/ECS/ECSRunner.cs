@@ -8,6 +8,7 @@ using Game.Scripts.Gameplay.ECS.Dead;
 using Game.Scripts.Gameplay.ECS.Destroy;
 using Game.Scripts.Gameplay.ECS.Input;
 using Game.Scripts.Gameplay.ECS.Move;
+using Game.Scripts.Gameplay.ECS.Portal;
 using Game.Scripts.Gameplay.ECS.Rigidbody;
 using Game.Scripts.Gameplay.ECS.Rotate;
 using Game.Scripts.Gameplay.ECS.SendMessage;
@@ -49,6 +50,7 @@ namespace Game.Scripts.Gameplay.ECS
         //.Add(new JumpFeature())
         .Add(new SlapFeature())
         .Add(new DamageFeature())
+        .Add(new PortalFeature())
         .Add(new SendMessageFeature())
         .Add(new DestroyFeature())
         .Add(new DeadFeature())

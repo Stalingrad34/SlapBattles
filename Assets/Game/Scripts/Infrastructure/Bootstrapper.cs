@@ -18,7 +18,7 @@ namespace Game.Scripts.Infrastructure
             
             ServiceProvider.Register(multiplayerManager);
             StateMachine.Init();
-            StateMachine.EnterAsync<StandardGameState>().Forget();
+            StateMachine.EnterAsync<LobbyState>().Forget();
         }
     }
 }
